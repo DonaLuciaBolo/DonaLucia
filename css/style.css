@@ -120,6 +120,7 @@ nav a:hover {
   object-fit: cover;
   width: 100%;
 }
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -147,8 +148,17 @@ nav a:hover {
 .conteudo-tab {
   display: none;
 }
-.conteudo-tab {
-  display: none;
+
+#tab1:checked ~ .conteudo #conteudo1,
+#tab2:checked ~ .conteudo #conteudo2,
+#tab3:checked ~ .conteudo #conteudo3,
+#tab4:checked ~ .conteudo #conteudo4,
+#tab5:checked ~ .conteudo #conteudo5,
+#tab6:checked ~ .conteudo #conteudo6,
+#tab7:checked ~ .conteudo #conteudo7,
+#tab8:checked ~ .conteudo #conteudo8,
+#tab9:checked ~ .conteudo #conteudo9 {
+  display: block;
 }
 
 #tab1:checked ~ .tabs label[for="tab1"],
@@ -169,3 +179,41 @@ input[type="radio"] {
   display: none;
 }
 
+.caixa p strong {
+  font-size: 16px;
+}
+
+.caixa p {
+  margin: 6px 0;
+}
+
+.perfil {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.perfil-texto {
+  flex: 1;
+}
+
+.perfil-foto img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--borda-caixa);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .perfil-foto img {
+    width: 220px;
+    height: 220px;
+  }
+}
