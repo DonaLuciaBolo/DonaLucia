@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Depoimentos - Dona Lúcia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <img src="img/logo.png" alt="Logo Dona Lúcia">
+  <h1>Dona Lúcia</h1>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="cardapio.html">Cardápio</a>
+    <a href="depoimentos.html">Depoimentos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="pascoa.html">Datas Especiais</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="caixa">
+  <h2 class="titulo-destaque">Avaliações no Google ⭐</h2>
+  <p>Algumas avaliações reais de clientes no Google Maps.</p>
+</div>
+
+  <div class="grid">
+
+    <div class="caixa">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p><strong>“Realizo a compra de bolos já alguns anos, agora estou comprando os kits de merversario, só elogios, todo o kit e decoração é tudo feito com muito capricho.”</strong></p>
+      <p>– Jessica Araujo</p>
+    </div>
+
+    <div class="caixa">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p><strong>“Começamos à comprar da d. Lúcia, bem lá no início. Na verdade compravámos até por pedaço, pq como sou vizinha. O pessoal vinha jogar baralho na garagem da casa dos meus pais e aí proveitavámos e comprávamos dos bolos e tortas de morango tb.... Sempre muito caprichosa..”</strong></p>
+      <p>– Lia Pires</p>
+    </div>
+
+    <div class="caixa">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p><strong>“Já encomendei bolos e salgados várias vezes para as festas dos meus filhos e sempre sou atendido com o melhor padrão de qualidade! Super recomendo!”</strong></p>
+      <p>– Cesar Augusto Arakaki</p>
+    </div>
+
+    <div class="caixa">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p><strong>“Encomendamos os bolos da dona Lúcia há 10 anos ou mais, não há bolos e doces melhor, a família inteira ama, não trocamos por nada.”</strong></p>
+      <p>– Carla Godoy</p>
+    </div>
+
+  </div>
+
+<div class="caixa">
+  <h2 class="titulo-destaque">Depoimentos no WhatsApp 💬</h2>
+  <p>Mensagens reais de clientes (dados sensíveis ocultados).</p>
+
+  <div class="carrossel" id="carrossel-whats">
+    <img src="img/depoimentos/whats1.jpeg" alt="Depoimento WhatsApp 1">
+    <img src="img/depoimentos/whats2.jpeg" alt="Depoimento WhatsApp 2">
+    <img src="img/depoimentos/whats3.jpeg" alt="Depoimento WhatsApp 3">
+  </div>
+</div>
+</div>
+<script>
+  const carrosselWhats = document.getElementById('carrossel-whats');
+  let scrollWhats = 0;
+  let intervaloWhats;
+
+  function iniciarWhats() {
+    if (!carrosselWhats) return;
+
+    intervaloWhats = setInterval(() => {
+      const maxScroll = carrosselWhats.scrollWidth - carrosselWhats.clientWidth;
+
+      if (scrollWhats >= maxScroll) {
+        scrollWhats = 0;
+        carrosselWhats.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollWhats += carrosselWhats.clientWidth;
+        carrosselWhats.scrollTo({ left: scrollWhats, behavior: 'smooth' });
+      }
+    }, 3000);
+  }
+
+  carrosselWhats.addEventListener('mouseenter', () => clearInterval(intervaloWhats));
+  carrosselWhats.addEventListener('mouseleave', iniciarWhats);
+
+  iniciarWhats();
+</script>
+
+</body>
+</html>

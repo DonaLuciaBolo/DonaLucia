@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dona Lúcia - Bolos e Doces</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <img src="img/logo.png" alt="Logo Dona Lúcia">
+  <h1>Dona Lúcia</h1>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="cardapio.html">Cardápio</a>
+    <a href="depoimentos.html">Depoimentos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="pascoa.html">Datas Especiais</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="caixa">
+    <h2 class="titulo-destaque">Bolos, Doces e Salgados feitos com carinho ❤️</h2>
+    <p>Encomendas para festas, aniversários e datas especiais.</p>
+  </div>
+
+  <div class="caixa">
+    <h2 class="titulo-destaque">Produtos</h2>
+
+  <div class="carrossel" id="carrossel">
+    <img src="img/bolo1.jpeg">
+    <img src="img/bolo2.jpeg">
+    <img src="img/bolo3.jpeg">
+    <img src="img/doce1.jpeg">
+    <img src="img/cupcake.jpeg">
+  </div>
+</div>
+
+
+<div class="caixa">
+  <h2 class="titulo-destaque">Nossos destaques</h2>
+
+
+
+    <div class="grid">
+      <div class="produto">
+        <img src="img/bolo1.jpeg">
+        <h3>Bolo de Aniversário</h3>
+        <p>Personalizado para sua festa</p>
+      </div>
+
+      <div class="produto">
+        <img src="img/bolo2.jpeg">
+        <h3>Docinhos</h3>
+        <p>Docinhos para todas as ocasiões.</p>
+      </div>
+
+      <div class="produto">
+        <img src="img/cupcake.jpeg">
+        <h3>Salgadinhos</h3>
+        <p>Nossos salgadinhos sempre quentinhos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="caixa">
+    <h2 class="titulo-destaque">Encontre a Dona Lúcia</h2>
+    <p>📍 Rua Jurua, 220 - Diadema - SP</p>
+    <p>📱 WhatsApp: (11) 97579-3916</p>
+    <p>🛵 Peça pelo 99Food e iFood</p>
+  </div>
+
+</div>
+
+<script>
+  const carrossel = document.getElementById('carrossel');
+  let scrollAmount = 0;
+  let intervalo;
+
+  function iniciarCarrossel() {
+    intervalo = setInterval(() => {
+      if (!carrossel) return;
+
+      const maxScroll = carrossel.scrollWidth - carrossel.clientWidth;
+
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+        carrossel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollAmount += carrossel.clientWidth;
+        carrossel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, 3000); // troca a cada 3 segundos
+  }
+
+  carrossel.addEventListener('mouseenter', () => clearInterval(intervalo));
+  carrossel.addEventListener('mouseleave', iniciarCarrossel);
+
+  iniciarCarrossel();
+</script>
+
+</body>
+</html>
