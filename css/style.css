@@ -217,3 +217,68 @@ input[type="radio"] {
     height: 220px;
   }
 }
+
+/* Container da imagem do depoimento */
+.depoimento-img {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px; /* opcional: cantinho arredondado */
+}
+
+/* Imagem em si */
+.depoimento-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção e corta excesso */
+  display: block;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25d366; /* verde WhatsApp */
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+.link-contato {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-contato:hover {
+  text-decoration: underline;
+}
+
+.delivery-links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.delivery-item img {
+  height: 28px;
+  width: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.delivery-item img:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
