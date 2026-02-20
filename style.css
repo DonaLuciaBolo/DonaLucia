@@ -268,17 +268,32 @@ input[type="radio"] {
   margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
-.delivery-item img {
-  height: 28px;
-  width: auto;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.delivery-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.delivery-item img:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+.delivery-item img {
+  max-height: 26px;
+  max-width: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Ajuste fino no mobile */
+@media (max-width: 480px) {
+  .delivery-links {
+    gap: 8px;
+  }
+
+  .delivery-item img {
+    max-height: 22px;
+    max-width: 70px;
+  }
 }
